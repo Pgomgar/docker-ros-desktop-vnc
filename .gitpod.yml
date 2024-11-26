@@ -1,0 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: docker pull tiryoh/ros-desktop-vnc:melodic
+  - command: docker run -p 6080:80 --shm-size=512m tiryoh/ros-desktop-vnc:melodic
+
+ports:
+  - port: 6080
+    onOpen: open-preview
